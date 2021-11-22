@@ -10,8 +10,10 @@ const countryList = document.querySelector('.country-list');
 const DEBOUNCE_DELAY = 300;
 
 const renderCountryCard = countryData => {
-  if (countryData.length > 1) {
+  if (countryData.length >= 10) {
     countryCardsWrapperEl.insertAdjacentHTML('beforeend', countryListTemplate());
+  } else if (countryData.length = 1) {
+    countryCardsWrapperEl.insertAdjacentHTML('beforeend', countryCardTemplate());
   }
 };
 
@@ -19,7 +21,7 @@ const searchCountry = (event) => {
   const country = countryInput.value;
 
   fetchCountries(country)
-  .then(countryData => {
+    .then(countryData => {
     console.log(countryData);
     renderCountryCard(countryData);
   })
