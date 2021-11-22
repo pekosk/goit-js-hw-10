@@ -24,7 +24,7 @@ const renderCountryCard = countryData => {
 
 const createMarkupManyCountry = countryData => {
   return countryData
-    .map(({ name, flags }) => `<img class="list-flag" src="${flags.png}"></img>
+    .map(({ name, flags }) => `<img class="list-flag" src="${flags.png}" alt="${name.official}" width="60px" height="40px"></img>
 <h2 class="country-list-name">${name.official}</h2>`)
     .join('');
 };
@@ -32,7 +32,7 @@ const createMarkupManyCountry = countryData => {
 const createMarkupOneCountry = countryData => {
   return countryData
     .map(({ name, flags, capital, population, languages }) => `<div class="country__card">
-  <img class="country-flag" src="${flags.png}"></img>
+  <img class="country-flag" src="${flags.png}" alt="${name.official}" width="300px" height="200px"></img>
   <h2 class="country-name">${name.official}</h2>
   <ul class="country-info">
   <li class="country-info-item">
