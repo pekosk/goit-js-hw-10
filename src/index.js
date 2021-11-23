@@ -1,5 +1,6 @@
 import './css/styles.css';
 import debounce from 'lodash.debounce';
+import Notiflix, { Notify } from 'notiflix';
 // import countryCardTemplate from './country-card.hbs';
 // import countryListTemplate from './country-list.hbs';
 import { fetchCountries } from './fetchCountries';
@@ -19,6 +20,10 @@ const renderCountryCard = countryData => {
     cleanEl(countryCardsWrapperEl);
     const markupManyCountry = createMarkupManyCountry(countryData);
     countryList.innerHTML = markupManyCountry;
+  } else if (countryData.length > 10) {
+    cleanEl(countryList);
+    cleanEl(countryCardsWrapperEl);
+    Notify.info("Too many matches found. Please enter a more specific name.");
   }
 };
 
@@ -58,6 +63,7 @@ const searchCountry = (event) => {
   })
   .catch(error => {
     console.log(error);
+    Notify.failure("Oops, there is no country with that name");
   });
 };
 
