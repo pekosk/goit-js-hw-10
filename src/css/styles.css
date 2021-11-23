@@ -33,3 +33,12 @@ ul {
   font-family: 'Bebas Neue';
   font-size: 20px;
 }
+
+.list-container {
+  display: flex;
+  align-items: center;
+}
+
+.list-flag {
+  margin-right: 10px;
+}
