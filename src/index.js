@@ -36,13 +36,13 @@ const createMarkupOneCountry = countryData => {
   <h2 class="country-name">${name.official}</h2>
   <ul class="country-info">
   <li class="country-info-item">
-      <p class="country-capital">Capital: ${capital}</p>
+      <p class="country-capital">Capital: <span class="country-elem">${capital}</span></p>
     </li>
   <li class="country-info-item">
-      <p class="country-population">Population: ${population}</p>
+      <p class="country-population">Population: <span class="country-elem">${population}</span></p>
     </li>
   <li class="country-info-item">
-      <p class="country-languages">Languages: ${Object.values(languages)}</p>
+      <p class="country-languages">Languages: <span class="country-elem">${Object.values(languages)}</span></p>
     </li>
   </ul>
 </div>`)
